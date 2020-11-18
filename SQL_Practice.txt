@@ -1,0 +1,112 @@
+1. Revising the Select Query I
+
+Select * from City c where c.countrycode like "USA" and c.population>100000
+
+
+2. Revising the Select Query II
+
+Select c.name from City c where c.countrycode like "USA" and c.population>120000
+
+
+3. Select All
+
+Select * from City
+
+
+4. Select By ID
+
+Select * from City c where c.ID = 1661;
+
+
+5. Japanese Cities' Attributes
+(Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE for Japan is JPN.)
+
+Select * from City c where c.COUNTRYCODE like 'JPN';
+
+
+6. Weather Observation Station 1
+Query a list of CITY and STATE from the STATION table. 
+
+Select s.City,s.State from Station s;
+
+
+7. Weather Observation Station 3
+Query a list of CITY names from STATION for cities that have an even ID number. 
+Print the results in any order, but exclude duplicates from the answer. 
+
+Select DISTINCT s.City from Station s where s.ID%2=0;
+
+
+8.Weather Observation Station 4
+Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table. 
+
+Select count(s.City)-count(DISTINCT s.CITY) from Station s;
+
+
+9. Weather Observation Station 5
+Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). 
+If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically. 
+
+Select s.City,length(s.City) from Station s order by length(s.City),s.City limit 1;
+
+Select s.City,length(s.City) from Station s order by length(s.City) DESC limit 1;
+
+
+10. Weather Observation Station 6
+Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. 
+Your result cannot contain duplicates.
+
+Select DISTINCT s.City from Station s where s.City like "A%" or s.City like "E%" or s.City like "I%" or s.City like "O%" or s.City like "U%";
+
+
+11. Weather Observation Station 7
+Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+
+Select DISTINCT s.City from Station s where s.City like "%a" or s.City like "%e" or s.City like "%i" or s.City like "%o" or s.City like "%u";
+
+
+12. Weather Observation Station 8
+Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. 
+Your result cannot contain duplicates.
+
+Select DISTINCT s.City from Station s where (s.City like "A%" or s.City like "E%" or s.City like "I%" or s.City like "O%" or s.City like "U%") 
+and 
+(s.City like "%a" or s.City like "%e" or s.City like "%i" or s.City like "%o" or s.City like "%u");
+
+
+13. Weather Observation Station 9
+Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
+
+Select DISTINCT s.City from Station s where s.City not like "A%" and s.City not like "E%" and s.City not like "I%" and s.City not like "O%" and s.City not like "U%";
+
+
+14. Weather Observation Station 10
+Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
+
+Select DISTINCT s.City from Station s where s.City not like "%a" and s.City not like "%e" and s.City not like "%i" and s.City not like "%o" and s.City not like "%u";
+
+
+15. Weather Observation Station 11
+Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
+
+Select DISTINCT s.City from Station s where (s.City not like "A%" and s.City not like "E%" and s.City not like "I%" and s.City not like "O%" and s.City not like "U%") 
+or 
+(s.City not like "%a" and s.City not like "%e" and s.City not like "%i" and s.City not like "%o" and s.City not like "%u");
+
+
+16. Weather Observation Station 12
+Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+Select DISTINCT s.City from Station s where (s.City not like "A%" and s.City not like "E%" and s.City not like "I%" and s.City not like "O%" and s.City not like "U%") 
+and 
+(s.City not like "%a" and s.City not like "%e" and s.City not like "%i" and s.City not like "%o" and s.City not like "%u");
+
+
+17. 
+
+
+
+
+
+
+
